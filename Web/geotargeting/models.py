@@ -7,6 +7,7 @@ class Point(models.Model):
     name = models.CharField("Name", max_length=100)
     central_point = models.FloatField('coordinates', null=True)
     radius_area = models.FloatField('radius')
+    count = models.FloatField('Count')
 
     def __str__(self):
         return f"Координаты {self.name}"

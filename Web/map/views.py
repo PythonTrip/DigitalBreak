@@ -3,7 +3,6 @@ import folium
 from folium import plugins
 import numpy as np
 import json
-import requests
 from geotargeting.models import Point
 
 
