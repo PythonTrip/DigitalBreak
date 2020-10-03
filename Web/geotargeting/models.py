@@ -5,7 +5,8 @@ from django.db import models
 class Point(models.Model):
     """Точки"""
     name = models.CharField("Name", max_length=100)
-    central_point = models.FloatField('coordinates', null=True)
+    central_point = models.TextField('coordinates', null=True)
+    under_point = models.TextField('under coordinates', null=True)
     radius_area = models.FloatField('radius')
     count = models.FloatField('Count')
 
