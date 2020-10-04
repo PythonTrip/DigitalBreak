@@ -16,3 +16,9 @@ class Point(models.Model):
     class Meta:
         verbose_name = 'Координаты'
         verbose_name_plural = 'Координаты'
+
+
+class Place(models.Model):
+    """Точки"""
+    central_point = models.TextField('coordinates', null=True)
+    temp = models.IntegerField()
