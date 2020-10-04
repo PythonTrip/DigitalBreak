@@ -133,7 +133,7 @@ class UpdateView(APIView):
                     output_coord = []
                     for ind in neighbors[i]:
                         coord = dataHM.iloc[ind]
-                        if 55.6 < coord[0] < 55.71 and 37.5 < coord[1] < 37.7:
+                        if 55.59 < coord[0] < 55.71 and 37.5 < coord[1] < 37.7:
                             for pl in dataPl:
                                 if 55.6 < pl[0] < 55.71 and 37.5 < pl[1] < 37.7:
                                     if get_distanse(coord[0], pl[0], coord[1], pl[1]) < min_dist:
@@ -142,7 +142,7 @@ class UpdateView(APIView):
 
                     if len(output_coord) > 1:
                         folium.CircleMarker(location=[output_coord[0], output_coord[1]],
-                                            radius=3, color='red').add_to(fg)
+                                            radius=1.9, color='red').add_to(fg)
                     # coord = dataHM.iloc[index]
                     # if 55.6 < coord[0] < 55.71 and 37.5 < coord[1] < 37.7:
                     #     folium.CircleMarker(location=[coord[0], coord[1]],
@@ -152,7 +152,7 @@ class UpdateView(APIView):
                 coord = dataHM.iloc[index]
                 if 55.6 < coord[0] < 55.71 and 37.5 < coord[1] < 37.7:
                     folium.CircleMarker(location=[coord[0], coord[1]],
-                                        radius=3, color='green').add_to(fg)
+                                        radius=2, color='green').add_to(fg)
             folium_map.save(".\\map\\templates\\map\\map.html")
 
         return Response({"success": "Update successfully"})
